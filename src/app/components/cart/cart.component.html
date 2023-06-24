@@ -1,0 +1,56 @@
+<!-- 
+<div class="container" *ngFor="let product of cart" style="margin-top: 20px; margin-bottom: 30px;">
+  <h2>Product Details</h2>
+  <p>Total : {{total }}€</p>
+  <img src="{{product.image}}" style="width: 400px;">
+  <p>{{product.name}}</p>
+  <p>{{product.price}}</p>
+  <p>{{product.description}}</p>
+  <hr>
+</div> -->
+<div class="hhh1">
+
+</div>
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let product of cart">
+    <div class="card-container">
+      <div class="card u-clearfix">
+        <div class="card-body">
+          <span class="card-number card-circle subtle">1</span>
+          <span class="card-author subtle">{{ product.name }}</span>
+          <h2 class="card-title">${{ product.price }}</h2>
+          <span class="card-description subtle">{{ product.description }}</span>
+          <span class="card-tag card-circle subtle">C</span>
+        </div>
+        <img [src]="product.image" alt="" class="card-media" />
+      </div>
+      <div class="card-shadow"></div>
+    </div>
+  </div>
+</div>
+<div class="total-box">
+  <div class="total" *ngIf="cart">
+    <h3>Dishes Total: ${{ (total) }}</h3>
+    <hr style="color: black;">
+    <p>Amount+Service :$<strong>{{ (discount) }}</strong></p>
+    <hr style="color: black;">
+    <p *ngIf="total >40">Your Discount Is $:{{total*0.15}} |||Your New Amount Is $:{{discount-total*0.15}}</p>
+  </div>
+</div>
+
+<div id="orderForm">
+  <h2>Order Form</h2>
+</div>
+<form class="foorm">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Address</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

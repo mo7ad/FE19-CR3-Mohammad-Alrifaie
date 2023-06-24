@@ -1,0 +1,26 @@
+
+
+.header {
+  height: 400px;
+  background-color: rgba(28, 27, 27, 0.641);
+  position: relative;
+}
+
+.container {
+  padding: 30px;
+  padding-left: 50px;
+  width: 1050px;
+  background-color: #eeeeee50;
+}
+
+
+
+.row{
+}
+
+.header h1{
+  color: rgb(172, 156, 156);
+  translate: 43% 600%;
+  font-family: cursive;
+}
+

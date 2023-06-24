@@ -1,0 +1,22 @@
+<div class="header">
+    <h1>OUR MENU</h1>
+</div>
+<div class="container">
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1 justify-content-center">
+        <div *ngFor="let product of products; index as i">
+            <div class="card  " style="width: 18rem;">
+                <img src="{{product.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <hr>
+                    <p class="card-text">{{product.description}}</p>
+                    <hr>
+                    <p class="card-text" style="color: green;">${{product.price}}</p>
+                    <hr>
+                    <p *ngIf="!product.availability " style="color: red;">Not available</p>
+                    <div class="btn" *ngIf="product.availability">
+                        <a routerLink="/product/{{i}}"  class="btn btn-primary m-4">Details</a>
+                        <button (click)="addToCart(product)" class="btn btn-success m-4">Add To Cart</button>                    </div>
+        </div>
+    </div>
+</div>
